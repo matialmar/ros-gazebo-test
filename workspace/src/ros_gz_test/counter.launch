@@ -1,0 +1,7 @@
+<launch>
+
+  <group ns="ros_gazebo_test">
+    <node pkg="ros_gz_test" name="test_node" type="ros_gz_test_node"/>
+  </group>
+
+</launch>

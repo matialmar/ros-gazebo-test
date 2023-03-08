@@ -1,6 +1,6 @@
 # ROS Kinetic + Gazebo on Docker HOWTO
 
-This tutorial is focused on those people that have Ubuntu 14.04 + ROS Indigo and they want to run Gazebo 7 or later.
+Ubuntu 16.04 + ROS Kinetic with Gazebo 7 or later.
 
 ## Step 1: Install Docker
 Install docker https://docs.docker.com/engine/installation/linux/ubuntu/
