@@ -36,8 +36,9 @@ ENV NVIDIA_VISIBLE_DEVICES \
     ${NVIDIA_VISIBLE_DEVICES:-all}
 ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
+    
 
-# USER original_user
+#USER original_user
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-kinetic-gazebo-* \

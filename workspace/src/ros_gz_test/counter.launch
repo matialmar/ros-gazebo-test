@@ -4,4 +4,9 @@
     <node pkg="ros_gz_test" name="test_node" type="ros_gz_test_node"/>
   </group>
 
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find ros_gz_test)/worlds/test.world"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+
 </launch>
