@@ -36,10 +36,12 @@ ENV NVIDIA_VISIBLE_DEVICES \
     ${NVIDIA_VISIBLE_DEVICES:-all}
 ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
-    
 
-#USER original_user
-# install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-kinetic-gazebo-* \
   && rm -rf /var/lib/apt/lists/*
+  
+# HACK to fix bug in gazebo when using database url
+RUN sed -i 's#export GAZEBO_MODEL_DATABASE_URI=http://gazebosim.org/models#export GAZEBO_MODEL_DATABASE_URI=http://models.gazebosim.org/#' /usr/share/gazebo/setup.sh
+RUN echo 'source /usr/share/gazebo/setup.sh' >>  /root/.bashrc 
+ 
