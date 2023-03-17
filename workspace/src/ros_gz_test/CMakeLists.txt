@@ -18,7 +18,7 @@ std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -105,12 +105,13 @@ include_directories(
   # include
   ${catkin_INCLUDE_DIRS} 
   ${GAZEBO_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIR}
 )
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}_plugin src/plugin.cpp)
 ## Add cmake target dependencies of the library
-target_link_libraries(${PROJECT_NAME}_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 
 ## Declare a C++ executable
 add_executable(${PROJECT_NAME}_node src/counter.cpp)

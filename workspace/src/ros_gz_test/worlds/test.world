@@ -9,6 +9,12 @@
       <uri>model://sun</uri>
     </include>
 
+    <include>
+      <uri>model://box</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+
     <!-- reference to your plugin -->
     <plugin name="ros_gz_test_plugin" filename="libros_gz_test_plugin.so"/>
   </world>
