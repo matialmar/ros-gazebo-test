@@ -29,6 +29,26 @@ To make it easier, I created the launcher **launch_docker.sh** (you might need t
 
      ./launch_docker.sh
 
+## Step 5: Build and deploy
+
+ROS and Gazebo uses catkin buildsystem
+
+    cd workspace
+    catkin_make
+    source devel/setup.bash
+
+## Step 6: Run
+
+First you need to initialize the ROS Master
+    
+    roscore &
+
+Then use the roslaunch command to launch both the nodes and gazebo
+
+    roslaunch ros_gz_test counter.launch
+
+Press Ctrl+C to exit.
+
 # References
 
 * http://wiki.ros.org/docker/Tutorials/Docker
